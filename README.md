@@ -52,11 +52,13 @@ The chatbot_based UI features included: system role, conversation setting up, me
 ## 1. Inference Speed Comparison (CPU-only)
 
 Inference Speed Results of Fine-tuned 1B and 3B LLMs with prompt "Calculate the length of the hypotenuse of a right triangle with right angle":
-Model	Format	Total Time (s)	Tokens/sec Tokens
-Llama-3.2-1B-Instruct	Q4_K_M	12.340	16.208	200
-Llama-3.2-3B-Instruct	Q4_K_M	25.512	7.840	  200
 
-Summary
+| Model | Format | Total Time (s) | Tokens/sec | Tokens |
+|-------|--------|----------------|------------|----------|
+| Llama-3.2-1B-Instruct | Q4_K_M | 12.340 | 16.208 | 200 |
+| Llama-3.2-3B-Instruct | Q4_K_M | 25.512 | 7.840 | 200 |
+
+Summary：
 1B is significantly faster on CPU and ideal for deployment.
 
 ## 2. Model Quality Evaluation Using Qwen2.5-7B Judge
@@ -85,5 +87,6 @@ judge_prompt = f"""
             )
 """
 ```
-The results(prompt, outputs of both models and winners for each question) are shown in eval_results_unsloth_only(1).json
+The results(prompt, outputs of both models and winners for each question) are shown in eval_results_unsloth_only(1).json.
+
 The win rate above 60% indicates meaningful improvement. But it does not mean the winner gives really meaninggul answers.
