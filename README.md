@@ -1,11 +1,11 @@
-Fine-Tuning Llama 3.2 (1B & 3B) with LoRA + GGUF Deployment
-ID2223_Lab 2 (HT2025)
+##<span style="font-size: 28px;">Fine-Tuning Llama 3.2 (1B & 3B) with LoRA + GGUF Deployment</span>
+
 
 ## Overview
 
 This project implements parameter-efficient fine-tuning (PEFT) using LoRA on Llama-3.2 models, converts the fine-tuned weights into GGUF format for CPU-only environments, and deploys a Gradio UI on HuggingFace Spaces.
 
-In Task 2, we compare the behavior of 1B and 3B models under limited compute (batch size = 2, 500 steps), measure inference speed, and evaluate model quality using an automatic judge model.
+In part 2, we compare the inference speed of 1B and 3B models under limited compute (batch size = 2, 500 steps) and evaluate the fine-tuned 1B model quality using an automatic judge model.
 
 # Part 1 — Fine-Tuning & UI Deployment
 ## 1. Training with Checkpoints Saved.
