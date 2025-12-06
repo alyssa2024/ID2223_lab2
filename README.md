@@ -30,11 +30,15 @@ trainer.train(resume_from_checkpoint=True)
 
 GGUF export code
 ```python
-model.save_pretrained_gguf(
-    "model",
-    tokenizer,
-    quantization_method="q4_k_m"
-)
+!python llama.cpp/convert_hf_to_gguf.py \
+    /content/drive/MyDrive/LLM_fineTuning/model_1B_train \
+    --outfile temp_fp16.gguf \
+    --outtype f16
+
+!python llama.cpp/build/bin/llama-quantize.py \
+  /content/temp_fp16.gguf \
+  --outfile model_1B_train_q4_k_m.gguf" \
+  --outtype q4_k_m
 ```
 
 ## 3. Deploying a Gradio UI on HuggingFace Spaces
