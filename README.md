@@ -1,4 +1,4 @@
-##<span style="font-size: 28px;">Fine-Tuning Llama 3.2 (1B & 3B) with LoRA + GGUF Deployment</span>
+## <span style="font-size: 40px;">Fine-Tuning Llama 3.2 (1B & 3B) with LoRA + GGUF Deployment</span>
 
 
 ## Overview
@@ -57,11 +57,9 @@ Summary
 
 ## 2. Model Quality Evaluation Using Qwen2.5-7B Judge
 
-We sampled 30 prompts from the evaluation set and scored base vs fine-tuned outputs using:
+We sampled 30 prompts from the evaluation set and scored base vs fine-tuned outputs using: Qwen2.5-7B-Instruct-bnb-4bit as the judge model.
 
-Qwen2.5-7B-Instruct-bnb-4bit as the judge model.
-
-Judge prompt used
+```python
 judge_prompt = f"""
             "role": "system",
             "content": (
@@ -82,6 +80,6 @@ judge_prompt = f"""
                 "Reply with ONLY ONE letter."
             )
 """
-
+```
 The results(prompt, outputs of both models and winners for each question) are shown in eval_results_unsloth_only(1).json
 The win rate above 60% indicates meaningful improvement. But it does not mean the winner gives really meaninggul answers.
